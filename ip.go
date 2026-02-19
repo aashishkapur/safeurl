@@ -23,7 +23,8 @@ var privateNetworks = []net.IPNet{
 	parseCIDR("224.0.0.0/4"),        /* IP multicast (former Class D network) - RFC 3171 */
 	parseCIDR("240.0.0.0/4"),        /* Reserved (former Class E network) - RFC 1112, Section 4 */
 	parseCIDR("255.255.255.255/32"), /* Broadcast - RFC 919, Section 7 */
-	parseCIDR("100.64.0.0/10"),      /* Shared Address Space - RFC 6598 */
+	// Remove 100.64.0.0/10 from private networks for VPN compatibility.
+	// parseCIDR("100.64.0.0/10"),      /* Shared Address Space - RFC 6598 */
 	// ipv6 sourced from https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml
 	parseCIDR("::/128"),        /* Unspecified Address - RFC 4291 */
 	parseCIDR("::1/128"),       /* Loopback - RFC 4291 */
